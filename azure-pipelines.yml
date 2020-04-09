@@ -15,3 +15,11 @@ steps:
 
 - script: bash build.sh
   displayName: 'Run build script'
+- task: CopyFilesOverSSH@0
+  inputs:
+    sshEndpoint: 'somayyah@40.121.129.232'
+    contents: 'web/**'
+    targetFolder: '/var/www/html'
+    cleanTargetFolder: true
+    readyTimeout: '20000'
+    failOnEmptySource: true
