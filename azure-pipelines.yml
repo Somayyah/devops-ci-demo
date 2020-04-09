@@ -13,5 +13,5 @@ steps:
 - script: echo Hello, ICT DevOps!
   displayName: 'Say hello'
 
-- script: ./build.sh
+- script: bash build.sh
   displayName: 'Run build script'
