@@ -28,7 +28,7 @@ steps:
     sshEndpoint: 'somayyah@40.121.129.232'
     sourceFolder: 'web/'
     contents: '**'
-    targetFolder: '/home/somayyah/myTestDir'
+    targetFolder: '/var/www/html'
     cleanTargetFolder: true
     readyTimeout: '20000'
     failOnEmptySource: true
