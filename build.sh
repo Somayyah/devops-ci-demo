@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Running the build script..."
-
+echo "AZURE_VARIABLE=$1"
 HOSTNAME=$(hostname)
 echo "I am ${HOSTNAME}."
 echo "The time is $(date +%m-%d-%Y)."
