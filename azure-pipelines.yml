@@ -25,7 +25,7 @@ steps:
 # Start the deployment process
 - task: CopyFilesOverSSH@0
   inputs:
-    sshEndpoint: 'somayyah@40.121.129.232'
+    sshEndpoint: 'somayyah@13.90.40.39'
     sourceFolder: 'web/'
     contents: '**'
     targetFolder: '/var/www/html'
