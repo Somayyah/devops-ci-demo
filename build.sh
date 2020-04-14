@@ -1,7 +1,7 @@
 #!/bin/bash
 export SERVER_NAME=$(hostname)
-export TIMESTAMP=$2
-#export TIMESTAMP=$(date +%m-%d-%Y)
+#export TIMESTAMP=$2
+export TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
 export GIT_REPO="devops-ci-demo"
 export GIT_BRANCH=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
 
