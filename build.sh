@@ -1,6 +1,7 @@
 #!/bin/bash
 export SERVER_NAME=$(hostname)
-export TIMESTAMP=$(date +%m-%d-%Y)
+export TIMESTAMP=$2
+#export TIMESTAMP=$(date +%m-%d-%Y)
 export GIT_REPO="devops-ci-demo"
 export GIT_BRANCH=$(git symbolic-ref -q HEAD)
 export GIT_BRANCH=$(echo ${GIT_BRANCH##*,})
