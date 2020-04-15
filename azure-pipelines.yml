@@ -11,7 +11,8 @@ variables:
   AZURE_VARIABLE: 112263 
   GIT_REPO: $(Build.Repository.Name)
   GIT_BRANCH: $(Build.SourceBranchName)
-  SERVER_NAME: $(Agent.BuildDirectory)
+  SERVER_NAME: $(Agent.MachineName)
+
 
 # Steps
 steps:
