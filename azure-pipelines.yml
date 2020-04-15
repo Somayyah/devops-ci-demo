@@ -19,7 +19,7 @@ steps:
   displayName: 'Say hello'
 
 # Start the build process
-- script: bash build.sh $(AZURE_VARIABLE) $(TIMESTAMP)
+- script: bash build.sh 
   displayName: 'Run build script'
 
 # Start the deployment process
