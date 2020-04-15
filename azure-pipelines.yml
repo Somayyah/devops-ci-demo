@@ -17,6 +17,7 @@ variables:
   agent_name: $(Agent.Name)
   Agent_OS: $(Agent.OS)
   Agent_OSArchitecture: $(Agent.OSArchitecture)
+  
 # Steps
 steps:
 
