@@ -16,7 +16,7 @@ if [[ "$JOB_STATUS" = "Succeeded" ]];then
   echo "build $JOB_STATUS, Done."
   exit 0
 else
-  cp web/failedTBuild.html web/index.html
+  cp web/failedToBuild.html web/index.html
   echo "build $JOB_STATUS, try again."
   exit 1
 fi
