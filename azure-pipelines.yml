@@ -11,6 +11,10 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+# variables
+variables:
+  AZURE_VARIABLE: 112263 
+
 # Steps
 steps:
 
@@ -19,7 +23,7 @@ steps:
   displayName: 'Say hello'
 
 # Start the build process
-- script: bash build.sh 
+- script: bash build.sh $(AZURE_VARIABLE)
   displayName: 'Run build script'
 
 # Start the deployment process
