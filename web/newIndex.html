@@ -7,13 +7,14 @@
 
   <body>
     <h1>Hello, World!</h1>
-    <h2>I am the DevOps CI demo.</h2>
-    
+    <h2>Build: {job_status}</h2>
+    <h2>I was built by: {agent_name}<br>on: {Agent_OS}/{Agent.OSArchitecture}</h2>
     <h2>Some details about who I am:</h2>
     <p>I was built on {SERVER_NAME} at {TIMESTAMP} by {USER}.</p>
     <p>I was built from {GIT_REPO} on branch {GIT_BRANCH}.</p>
     <p>I was built in {PWD}.</p>
     <p>I was also passed the value: {AZURE_VARIABLE} from the Azure Pipeline.</p> 
+    <p>My ID is: {ID}</p>
     <a href="secondpage.html">
       <button type="button">
         Click Me!
