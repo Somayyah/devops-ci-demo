@@ -12,3 +12,9 @@ export TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
 sed -i "s/{/\${/g" web/index.html
 envsubst '$job_status $ID $TIMESTAMP $GIT_REPO $GIT_BRANCH $AZURE_VARIABLE $USER $PWD $SERVER_NAME' > web/newIndex.html <  web/index.html
 cp web/newIndex.html web/index.html
+echo
+echo "$job_status $ID $TIMESTAMP $GIT_REPO $GIT_BRANCH $AZURE_VARIABLE $USER $PWD $SERVER_NAME"
+echo
+cat web/newIndex.html
+echo
+cat web/index.html
