@@ -12,12 +12,12 @@ variables:
   GIT_REPO: $(Build.Repository.Name)
   GIT_BRANCH: $(Build.SourceBranchName)
   SERVER_NAME: $(Agent.MachineName)
-  agent_id: $(Agent.Id)
-  job_status: $(Agent.JobStatus)
-  agent_name: $(Agent.Name)
-  Agent_OS: $(Agent.OS)
+  ID: $(Agent.Id)
+  JOB_STATUS: $(Agent.JobStatus)
+  AGENT_NAME: $(Agent.Name)
+  AGENT_OS: $(Agent.OS)
   Agent_OSArchitecture: $(Agent.OSArchitecture)
-  
+
 # Steps
 steps:
 
@@ -26,7 +26,7 @@ steps:
   displayName: 'Say hello'
 
 # Start the build process
-- script: bash build.sh $AZURE_VARIABLE $GIT_REPO $GIT_BRANCH $SERVER_NAME $agent_id $job_status $agent_name $Agent_OS $Agent_OSArchitecture
+- script: bash build.sh $AZURE_VARIABLE $GIT_REPO $GIT_BRANCH $SERVER_NAME $ID $JOB_STATUS $AGENT_NAME $AGENT_OS $AGENT_OSARCH
   displayName: 'Run build script'
 
 # Start the deployment process
