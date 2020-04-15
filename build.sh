@@ -6,7 +6,7 @@ export SERVER_NAME=$4
 export TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
 sed -i "s/{/\${/g" web/index.html
 echo "$TIMESTAMP $GIT_REPO $GIT_BRANCH $AZURE_VARIABLE $USER $PWD $SERVER_NAME"
-envsubst '$TIMESTAMP $GIT_REPO $GIT_BRANCH $AZURE_VARIABLE $USER $PWD $SERVER_NAME' > web/newIndex.html < web/index.html 
+envsubst '$TIMESTAMP $GIT_REPO $GIT_BRANCH $AZURE_VARIABLE $USER $PWD $SERVER_NAME' > web/index.html < web/newIndex.html
 echo
 cat web/newIndex.html
 echo 
