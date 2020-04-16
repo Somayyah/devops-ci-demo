@@ -17,6 +17,7 @@ variables:
   AGENT_NAME: $(Agent.Name)
   AGENT_OS: $(Agent.OS)
   AGENT_ARCH: $(Agent.OSArchitecture)
+  MY_NAME: "Somayyah Mohammed"
 
 # Steps
 steps:
@@ -26,7 +27,7 @@ steps:
   displayName: 'Say hello'
 
 # Start the build process
-- script: bash build.sh $AZURE_VARIABLE $GIT_REPO $GIT_BRANCH $SERVER_NAME $ID $JOB_STATUS $AGENT_NAME $AGENT_OS $AGENT_OSARCH
+- script: bash build.sh $AZURE_VARIABLE $GIT_REPO $GIT_BRANCH $SERVER_NAME $ID $JOB_STATUS $AGENT_NAME $AGENT_OS $AGENT_OSARCH $MY_NAME
   displayName: 'Run build script'
 
 # Start the deployment process
