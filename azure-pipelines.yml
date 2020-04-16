@@ -29,6 +29,18 @@ steps:
 - script: bash build.sh $AZURE_VARIABLE $GIT_REPO $GIT_BRANCH $SERVER_NAME $ID $JOB_STATUS $AGENT_NAME $AGENT_OS $AGENT_OSARCH
   displayName: 'Run build script'
 
+# github release
+- task: GitHubRelease@1
+  inputs:
+    gitHubConnection: 'githubConnection'
+    repositoryName: 'Somayyah/devops-ci-demo'
+    action: 'create'
+    target: '$(Build.SourceVersion)'
+    tagSource: 'gitTag'
+    title: 'websiteV1.0'
+    changeLogCompareToRelease: 'lastFullRelease'
+    changeLogType: 'commitBased'
+    
 # Start the deployment process
 - task: CopyFilesOverSSH@0
   inputs:
