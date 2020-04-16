@@ -16,7 +16,7 @@ variables:
   JOB_STATUS: $(Agent.JobStatus)
   AGENT_NAME: $(Agent.Name)
   AGENT_OS: $(Agent.OS)
-  Agent_OSArchitecture: $(Agent.OSArchitecture)
+  AGENT_ARCH: $(Agent.OSArchitecture)
 
 # Steps
 steps:
@@ -39,4 +39,3 @@ steps:
     cleanTargetFolder: true
     readyTimeout: '20000'
     failOnEmptySource: true
-
