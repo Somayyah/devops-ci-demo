@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Hello, my name is: ${10}"
+echo "Hello, my name is: $MY_NAME"
 export JOB_STATUS=$6
 if [[ "$JOB_STATUS" = "Succeeded" ]];then
   export AZURE_VARIABLE=$1
