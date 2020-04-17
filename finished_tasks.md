@@ -6,18 +6,18 @@
 
 ---------------------------------------------------------------------------
 ### Releases Tag created using Azure Pipelines:
-![release variables](file:///home/somayyah/Pictures/yamlrelease.png)
-![release task](file:///home/somayyah/Pictures/releasecode.png)
+![release variables](file:///images/yamlrelease.png)
+![release task](file:///images/releasecode.png)
 
 ### Releases deployed on github:
 [link to Github repo releases!](https://github.com/Somayyah/devops-ci-demo/releases)
 
 #### Console data:
-![release data](file:///home/somayyah/Pictures/releasedata.png)
+![release data](file:///images/releasedata.png)
 
 ### Archived 
-![archived releases](file:///home/somayyah/Pictures/releases_on_vm.png)
+![archived releases](file:///images/releases_on_vm.png)
 
-![archiving/copying tasks](file:///home/somayyah/Pictures/archiving task.png)
+![archiving/copying tasks](file:///images/archiving task.png)
 #### Console data:
-![release data](file:///home/somayyah/Pictures/archivedata.png)
+![release data](file:///images/archivedata.png)
