@@ -65,7 +65,16 @@ steps:
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: 'web/index.html'
-    includeRootFolder: true
+    includeRootFolder: false
     archiveType: 'zip'
-    archiveFile: '/var/www/html/releases/$BUILD_DIR'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(BUILD_DIR).zip'
     replaceExistingArchive: true
+
+- task: CopyFilesOverSSH@0
+  inputs:
+    sshEndpoint: 'somayyah@13.90.97.208'
+    sourceFolder: '$(Build.ArtifactStagingDirectory)'
+    contents: '**'
+    targetFolder: '/var/www/html/releases'
+    readyTimeout: '20000'
+
