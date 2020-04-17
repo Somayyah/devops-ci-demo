@@ -44,7 +44,8 @@ steps:
     sourceFolder: 'web/'
     contents: '**'
     targetFolder: '/var/www/html'
-    cleanTargetFolder: true
+    cleanTargetFolder: false
+    overwrite: true
     readyTimeout: '20000'
     failOnEmptySource: true
 
