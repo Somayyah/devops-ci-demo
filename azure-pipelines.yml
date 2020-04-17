@@ -77,4 +77,5 @@ steps:
     targetFolder: '/var/www/html/releases'
     readyTimeout: '20000'
     cleanTargetFolder: false
+    overwrite: false
 
