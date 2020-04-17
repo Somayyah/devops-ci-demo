@@ -22,6 +22,7 @@ variables:
   MinorVersion: 0
   InitialReleaseTagNumber: 1
   IncrementReleaseTagNumber: $[counter(variables['InitialReleaseTagNumber'], 0)]
+  BUILD_DIR: "v$(MajorVersion).$(MinorVersion).$(IncrementReleaseTagNumber)"
 
 # Steps
 steps:
@@ -32,10 +33,8 @@ steps:
 
 # Start the build process
 - script:
-    buildDir="v$MajorVersion.$MinorVersion.$IncrementReleaseTagNumber"
-    mkdir $buildDir
-    ls
-    bash build.sh $AZURE_VARIABLE $GIT_REPO $GIT_BRANCH $SERVER_NAME $ID $JOB_STATUS $AGENT_NAME $AGENT_OS $AGENT_OSARCH $MY_NAME
+    
+    bash build.sh $AZURE_VARIABLE $GIT_REPO $GIT_BRANCH $SERVER_NAME $ID $JOB_STATUS $AGENT_NAME $AGENT_OS $AGENT_OSARCH $MY_NAME $BUILD_DIR
   displayName: 'Run build script'
 
 # Start the deployment process
@@ -62,4 +61,10 @@ steps:
     changeLogCompareToRelease: 'lastFullRelease'
     changeLogType: 'commitBased'
 
-
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(BUILD_DIR)'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '/var/www/html/releases/$(BUILD_DIR)'
+    replaceExistingArchive: true
