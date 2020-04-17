@@ -34,7 +34,7 @@ steps:
 
 # Start the build process
 - script:
-    bash build.sh $AZURE_VARIABLE $GIT_REPO $GIT_BRANCH $SERVER_NAME $ID $JOB_STATUS $AGENT_NAME $AGENT_OS $AGENT_OSARCH $MY_NAME $BUILD_DIR
+    bash build.sh $AZURE_VARIABLE $GIT_REPO $GIT_BRANCH $SERVER_NAME $ID $JOB_STATUS $AGENT_NAME $AGENT_OS $AGENT_OSARCH $MY_NAME
   displayName: 'Run build script'
 
 # Start the deployment process
@@ -67,7 +67,7 @@ steps:
     includeRootFolder: false
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(BUILD_DIR).zip'
-    replaceExistingArchive: false
+    replaceExistingArchive: true
 
 - task: CopyFilesOverSSH@0
   inputs:
@@ -78,4 +78,3 @@ steps:
     readyTimeout: '20000'
     cleanTargetFolder: false
     overwrite: false
-
