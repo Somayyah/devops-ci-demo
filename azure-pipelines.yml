@@ -34,7 +34,6 @@ steps:
 
 # Start the build process
 - script:
-    
     bash build.sh $AZURE_VARIABLE $GIT_REPO $GIT_BRANCH $SERVER_NAME $ID $JOB_STATUS $AGENT_NAME $AGENT_OS $AGENT_OSARCH $MY_NAME $BUILD_DIR
   displayName: 'Run build script'
 
@@ -68,7 +67,7 @@ steps:
     includeRootFolder: false
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(BUILD_DIR).zip'
-    replaceExistingArchive: true
+    replaceExistingArchive: false
 
 - task: CopyFilesOverSSH@0
   inputs:
@@ -77,4 +76,5 @@ steps:
     contents: '**'
     targetFolder: '/var/www/html/releases'
     readyTimeout: '20000'
+    cleanTargetFolder: false
 
