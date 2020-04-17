@@ -31,7 +31,11 @@ steps:
   displayName: 'Say hello'
 
 # Start the build process
-- script: bash build.sh $AZURE_VARIABLE $GIT_REPO $GIT_BRANCH $SERVER_NAME $ID $JOB_STATUS $AGENT_NAME $AGENT_OS $AGENT_OSARCH $MY_NAME
+- script:
+    buildDir="v$MajorVersion.$MinorVersion.$IncrementReleaseTagNumber"
+    mkdir $buildDir
+    ls
+    bash build.sh $AZURE_VARIABLE $GIT_REPO $GIT_BRANCH $SERVER_NAME $ID $JOB_STATUS $AGENT_NAME $AGENT_OS $AGENT_OSARCH $MY_NAME
   displayName: 'Run build script'
 
 # Start the deployment process
