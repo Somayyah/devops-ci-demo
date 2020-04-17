@@ -18,6 +18,10 @@ variables:
   AGENT_OS: $(Agent.OS)
   AGENT_ARCH: $(Agent.OSArchitecture)
   MY_NAME: "Somayyah Mohammed"
+  MajorVersion: 1
+  MinorVersion: 0
+  InitialReleaseTagNumber: 1
+  IncrementReleaseTagNumber: $[counter(variables['InitialReleaseTagNumber'], 0)]
 
 # Steps
 steps:
@@ -45,13 +49,12 @@ steps:
 
 - task: GitHubRelease@1
   inputs:
-    gitHubConnection: 'githubConnection'
-    repositoryName: 'Somayyah/devops-ci-demo'
+    gitHubConnection: 'github.com_Somayyah'
+    repositoryName: '$(Build.Repository.Name)'
     action: 'create'
     target: '$(Build.SourceVersion)'
-    tagSource: 'gitTag'
-    tagPattern: 'v1.*'
-    title: 'first_release'
+    tagSource: 'userSpecifiedTag'
+    tag: 'v$(MajorVersion).$(MinorVersion).$(IncrementReleaseTagNumber)'
     changeLogCompareToRelease: 'lastFullRelease'
     changeLogType: 'commitBased'
 
