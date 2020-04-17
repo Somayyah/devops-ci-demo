@@ -1,4 +1,4 @@
-# Task 1: Release and Archiving Process, Using Github and Azure Pipelines
+# Release and Archiving Process, Using Github and Azure Pipelines
 
 - [x] Creating an automaticly named release tag on Azure Pipelines
 - [x] Deploying the releases using Azure Pipelines on Github.
