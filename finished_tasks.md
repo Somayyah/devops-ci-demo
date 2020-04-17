@@ -10,7 +10,7 @@
 ![release task](releasecode.png)
 
 ### Releases deployed on github:
-[link to Github repo releases!](https://github.com/Somayyah/devops-ci-demo/releases)
+[link ](https://github.com/Somayyah/devops-ci-demo/releases)
 
 #### Console data:
 ![release data](releasedata.png)
