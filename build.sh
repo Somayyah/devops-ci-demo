@@ -6,7 +6,7 @@ if [[ "$JOB_STATUS" = "Succeeded" ]];then
   sed -i "s/{/\${/g" web/index.html
   envsubst '$AGENT_OS $AGENT_OSARCH $AGENT_NAME $JOB_STATUS $ID $TIMESTAMP $GIT_REPO $GIT_BRANCH $AZURE_VARIABLE $USER $PWD $SERVER_NAME' > web/newIndex.html <  web/index.html
   cp web/newIndex.html web/index.html
-  mkdir "/var/www/html/releases/$BUILD_DIR"
+  mkdir -p "/var/www/html/releases/$BUILD_DIR"
   cp web/index.html $BUILD_DIR
   echo "build $JOB_STATUS, Done."
   exit 0
